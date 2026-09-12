@@ -236,6 +236,21 @@ header {
     filter: saturate(0.95) contrast(1.05);
 }
 
+.profile-image-box.fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #252a33, #111419);
+}
+
+.profile-image-box.fallback::before {
+    content: "PD";
+    color: #d7b879;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
 .profile-name-block {
     margin-top: 16px;
     padding: 10px 8px 8px;
@@ -881,6 +896,10 @@ footer {
 /* Responsive */
 
 @media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
     .menu-toggle {
         display: flex;
     }
@@ -897,6 +916,7 @@ footer {
         border-radius: 16px;
         padding: 18px 20px;
         box-shadow: var(--shadow);
+        z-index: 10;
     }
 
     .nav-links.open {
@@ -1222,6 +1242,15 @@ footer {
 @media (max-width: 640px) {
     .landing-hero {
         min-height: calc(100vh - 78px);
+    }
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .logo {
+        font-size: clamp(1.15rem, 5.8vw, 1.7rem);
     }
 
     .landing-content h1 {
